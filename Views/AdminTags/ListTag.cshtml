@@ -1,0 +1,31 @@
+﻿@model List<Bloggie.Web.Models.Domain.Tag>
+
+<h1>List Tag</h1>
+
+<table class="table">
+    <thead>
+
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Display Name</td>
+            <td> </td>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach(var tag in Model)
+        {
+            <tr>
+                <td>@tag.Id</td>
+                <td>@tag.Name</td>
+                <td>@tag.DisplayName</td>
+                <td>
+                    <a class="btn btn-dark" asp-controller="AdminTags" asp-action="Edit" asp-route-id="@tag.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
